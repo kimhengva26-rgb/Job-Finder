@@ -1,0 +1,452 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+  width: 100%;
+  padding: 20px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+  font-size: 30px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.logo i{
+  margin-right: 8px;
+}
+
+.nav-links{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after{
+  width: 100%;
+}
+
+.nav-links a:hover{
+  color: #38bdf8;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 8%;
+  gap: 50px;
+}
+
+.hero-content{
+  flex: 1;
+}
+
+.hero-content h1{
+  font-size: 65px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content p{
+  font-size: 20px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+.hero-btn{
+  padding: 15px 35px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-btn:hover{
+  background: #0ea5e9;
+  transform: translateY(-5px);
+}
+
+.hero-image{
+  flex: 1;
+}
+
+.hero-image img{
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   JOB SECTION
+========================= */
+.jobs-section{
+  padding: 80px 8%;
+}
+
+.section-title{
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #38bdf8;
+}
+
+.jobs-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 30px;
+}
+
+.job-card{
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.job-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+}
+
+.job-card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.job-content{
+  padding: 25px;
+}
+
+.job-content h3{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.company{
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.location{
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.job-content button{
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.job-content button:hover{
+  background: #0284c7;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.popup-content{
+  width: 100%;
+  max-width: 520px;
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  animation: popupAnimation 0.4s ease;
+}
+
+@keyframes popupAnimation{
+  from{
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover{
+  color: red;
+}
+
+.popup-content img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.popup-content h2{
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+.popup-content p{
+  margin: 10px 0;
+  color: #e2e8f0;
+}
+
+/* =========================
+   CONTACT BUTTONS
+========================= */
+.contact-buttons{
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-buttons a{
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.telegram{
+  background: #229ED9;
+}
+
+.gmail{
+  background: #ea4335;
+}
+
+.contact-buttons a:hover{
+  transform: translateY(-4px);
+}
+
+/* =========================
+   APPLY BUTTON
+========================= */
+.apply-btn{
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover{
+  background: #0284c7;
+}
+
+/* =========================
+   FORM
+========================= */
+#applyForm{
+  display: none;
+  margin-top: 20px;
+}
+
+#applyForm input,
+#applyForm textarea{
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #334155;
+  color: white;
+}
+
+#applyForm textarea{
+  resize: none;
+  height: 120px;
+}
+
+#applyForm button{
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#applyForm button:hover{
+  background: #16a34a;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  background: #111827;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+footer h3{
+  font-size: 32px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+footer p{
+  color: #cbd5e1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width: 900px){
+
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1{
+    font-size: 48px;
+  }
+
+}
+
+@media(max-width: 768px){
+
+  .header{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links{
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content h1{
+    font-size: 38px;
+  }
+
+  .section-title{
+    font-size: 32px;
+  }
+
+}
+
+@media(max-width: 500px){
+
+  .hero-content h1{
+    font-size: 30px;
+  }
+
+  .popup-content{
+    padding: 20px;
+  }
+
+  .contact-buttons{
+    flex-direction: column;
+  }
+
+}
